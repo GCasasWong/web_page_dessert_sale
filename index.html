@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOLCE CAPRIXO — Postres artesanales en Chiclayo</title>
+<meta name="description" content="Cheesecakes y crema volteada artesanal hechos el mismo día en Chiclayo. Pide por WhatsApp y paga con Yape o Plin a la entrega.">
+<meta property="og:title" content="DOLCE CAPRIXO — Postres artesanales en Chiclayo">
+<meta property="og:description" content="Cheesecakes y crema volteada hechas el mismo día. Pide por WhatsApp.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#BF2B54">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%B0%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --berry:#BF2B54;
+    --berry-dark:#8D203E;
+    --berry-deep:#5E1529;
+    --rose:#DA6C81;
+    --rose-soft:#F6DAE0;
+    --ink:#261217;
+    --ink-soft:#704F56;
+    --cream:#F5E9D0;
+    --cream-deep:#E3D8C1;
+    --white:#FFFFFF;
+    --wa-1:#22B35C;
+    --wa-2:#0E7C3D;
+    --shadow:0 10px 30px rgba(94, 21, 41, 0.14);
+    --radius:22px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Poppins',system-ui,'Segoe UI',sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{font-family:'Playfair Display',Georgia,serif}
+  img{max-width:100%;display:block}
+  a{text-decoration:none;color:inherit}
+  .container{width:min(1160px,92%);margin-inline:auto}
+
+  /* ============ NAV ============ */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,246,239,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(192,32,96,.12);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0}
+  .logo{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:1.35rem;letter-spacing:.04em;color:var(--berry-deep)}
+  .logo span{color:var(--berry)}
+  .nav-cta{display:flex;gap:1rem;align-items:center}
+  .nav-link{font-weight:600;color:var(--ink-soft);transition:color .2s}
+  .nav-link:hover{color:var(--berry)}
+  .btn-wa{
+    display:inline-flex;align-items:center;gap:.55rem;
+    background:linear-gradient(135deg,var(--wa-1) 0%,var(--wa-2) 100%);
+    color:#fff;font-weight:600;font-size:.95rem;
+    padding:.72rem 1.35rem;border-radius:999px;
+    box-shadow:0 6px 18px rgba(14,124,61,.35);
+    transition:transform .18s ease,box-shadow .18s ease;
+    white-space:nowrap;
+  }
+  .btn-wa:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(14,124,61,.45)}
+  .btn-wa svg{flex-shrink:0}
+  .btn-ghost{
+    display:inline-flex;align-items:center;gap:.5rem;
+    border:2px solid var(--berry);color:var(--berry-dark);
+    font-weight:600;padding:.68rem 1.3rem;border-radius:999px;
+    transition:background .2s,color .2s;white-space:nowrap;
+  }
+  .btn-ghost:hover{background:var(--berry);color:#fff}
+
+  /* ============ HERO ============ */
+  .hero{position:relative;overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(700px 420px at 88% 8%,rgba(224,96,128,.22),transparent 65%),
+               radial-gradient(560px 420px at -6% 96%,rgba(192,32,96,.12),transparent 60%);
+    pointer-events:none;
+  }
+  .hero-inner{
+    position:relative;display:grid;
+    grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center;
+    padding:4.2rem 0 4.6rem;
+  }
+  .kicker{
+    display:inline-flex;align-items:center;gap:.5rem;
+    background:var(--white);border:1.5px solid var(--rose-soft);
+    color:var(--berry-dark);font-weight:600;font-size:.78rem;letter-spacing:.14em;
+    text-transform:uppercase;padding:.42rem .95rem;border-radius:999px;
+    box-shadow:0 4px 12px rgba(192,32,96,.08);margin-bottom:1.35rem;
+  }
+  .hero h1{
+    font-size:clamp(2.3rem,4.6vw,3.7rem);
+    font-weight:900;line-height:1.12;letter-spacing:-.01em;
+    color:var(--berry-deep);
+  }
+  .hero h1 em{font-style:italic;color:var(--berry)}
+  .hero p.lead{
+    font-size:1.08rem;color:var(--ink-soft);
+    margin:1.3rem 0 1.9rem;max-width:34rem;
+  }
+  .hero p.lead strong{color:var(--ink)}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.9rem;align-items:center}
+  .btn-big{font-size:1.05rem;padding:.95rem 1.9rem}
+  .chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.9rem}
+  .chip{
+    display:inline-flex;align-items:center;gap:.45rem;
+    background:var(--white);border:1.5px solid rgba(192,32,96,.14);
+    border-radius:999px;padding:.42rem .95rem;
+    font-size:.83rem;font-weight:500;color:var(--ink);
+    box-shadow:0 3px 10px rgba(94,10,48,.06);
+  }
+  .hero-figure{position:relative;justify-self:center;width:100%;max-width:440px}
+  .hero-figure::before{
+    content:"";position:absolute;inset:-6% -4%;
+    background:linear-gradient(160deg,var(--rose-soft),rgba(192,32,96,.28));
+    border-radius:38px;transform:rotate(5deg);
+  }
+  .hero-figure img{
+    position:relative;border-radius:32px;
+    aspect-ratio:4/5;object-fit:cover;width:100%;
+    box-shadow:var(--shadow);
+  }
+  .hero-badge{
+    position:absolute;left:-1.4rem;bottom:1.6rem;z-index:2;
+    background:var(--white);border-radius:18px;padding:.75rem 1.1rem;
+    box-shadow:0 12px 28px rgba(94,10,48,.2);
+    display:flex;flex-direction:column;line-height:1.25;
+    border:1.5px solid rgba(192,32,96,.14);
+  }
+  .hero-badge small{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+  .hero-badge strong{font-family:'Playfair Display',Georgia,serif;font-size:1.5rem;color:var(--berry)}
+
+  /* ============ TRUST STRIP ============ */
+  .trust{background:var(--berry-deep);color:#fff}
+  .trust-inner{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;
+    padding:1.7rem 0;
+  }
+  .trust-item{display:flex;align-items:center;gap:.85rem}
+  .trust-item .ico{
+    display:grid;place-items:center;width:46px;height:46px;flex-shrink:0;
+    background:rgba(255,255,255,.12);border-radius:13px;font-size:1.3rem;
+  }
+  .trust-item b{display:block;font-size:.98rem;font-weight:600}
+  .trust-item small{font-size:.78rem;color:rgba(255,255,255,.75)}
+
+  /* ============ MENU ============ */
+  .menu{padding:4.5rem 0 3.5rem}
+  .section-head{text-align:center;max-width:44rem;margin:0 auto 2.8rem}
+  .section-head .eyebrow{
+    color:var(--berry);font-weight:700;font-size:.8rem;
+    letter-spacing:.18em;text-transform:uppercase;
+  }
+  .section-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:900;color:var(--berry-deep);margin:.4rem 0 .6rem}
+  .section-head p{color:var(--ink-soft)}
+  .group{margin-bottom:3.4rem}
+  .group-head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:1.4rem;flex-wrap:wrap}
+  .group-head h3{font-size:1.6rem;font-weight:900;color:var(--ink)}
+  .group-head .tagline{color:var(--ink-soft);font-size:.92rem;font-style:italic}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .card{
+    position:relative;background:var(--white);
+    border-radius:var(--radius);overflow:hidden;
+    box-shadow:0 5px 18px rgba(94,10,48,.09);
+    border:1.5px solid rgba(192,32,96,.08);
+    display:flex;flex-direction:column;
+    transition:transform .22s ease,box-shadow .22s ease;
+  }
+  .card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .card .imgwell{
+    background:var(--white);
+    padding:1.1rem;display:grid;place-items:center;
+    border-bottom:1.5px dashed var(--rose-soft);position:relative;
+  }
+  .card .imgwell img{max-height:230px;width:auto;object-fit:contain;filter:drop-shadow(0 10px 14px rgba(94,10,48,.16))}
+  .ribbon{
+    position:absolute;top:12px;left:12px;z-index:2;
+    background:linear-gradient(135deg,var(--berry),var(--berry-dark));
+    color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    padding:.3rem .7rem;border-radius:999px;box-shadow:0 4px 10px rgba(142,18,70,.35);
+  }
+  .ribbon.gold{background:linear-gradient(135deg,#E8A317,#C77F00);box-shadow:0 4px 10px rgba(199,127,0,.35)}
+  .card-body{padding:1.15rem 1.3rem 1.35rem;display:flex;flex-direction:column;gap:.55rem;flex:1}
+  .size-line{display:flex;justify-content:space-between;align-items:center;gap:.6rem}
+  .size-line small{font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+  .price{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:1.75rem;color:var(--berry);line-height:1}
+  .card h3{font-size:1.18rem;font-weight:700;color:var(--ink)}
+  .card .desc{font-size:.86rem;color:var(--ink-soft);flex:1}
+  .btn-card{
+    margin-top:.4rem;display:flex;align-items:center;justify-content:center;gap:.5rem;
+    background:linear-gradient(135deg,var(--wa-1),var(--wa-2));
+    color:#fff;font-weight:600;font-size:.92rem;
+    padding:.72rem;border-radius:14px;
+    transition:transform .18s ease,box-shadow .18s ease;
+    box-shadow:0 5px 14px rgba(14,124,61,.28);
+  }
+  .btn-card:hover{transform:translateY(-2px);box-shadow:0 9px 20px rgba(14,124,61,.4)}
+
+  /* ============ WHY US ============ */
+  .why{background:linear-gradient(180deg,var(--cream) 0%,var(--cream-deep) 100%);padding:4.2rem 0}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .why-card{
+    background:var(--white);border-radius:var(--radius);padding:1.9rem 1.6rem;
+    box-shadow:0 5px 18px rgba(94,10,48,.08);border:1.5px solid rgba(192,32,96,.07);
+  }
+  .why-card .ico{
+    width:52px;height:52px;display:grid;place-items:center;font-size:1.5rem;
+    background:var(--rose-soft);border-radius:15px;margin-bottom:1rem;
+  }
+  .why-card h3{font-size:1.15rem;margin-bottom:.4rem;color:var(--berry-deep)}
+  .why-card p{font-size:.9rem;color:var(--ink-soft)}
+
+  /* ============ FINAL CTA ============ */
+  .cta-final{background:linear-gradient(140deg,var(--berry-dark) 0%,var(--berry) 55%,var(--rose) 130%);padding:4.6rem 0;text-align:center;color:#fff;position:relative;overflow:hidden}
+  .cta-final::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 50% 110%,rgba(255,255,255,.18),transparent 60%)}
+  .cta-final .container{position:relative}
+  .cta-final h2{font-size:clamp(1.9rem,3.6vw,2.8rem);font-weight:900;max-width:36rem;margin:0 auto 1rem;line-height:1.2}
+  .cta-final p{opacity:.92;max-width:32rem;margin:0 auto 2.2rem}
+  .cta-final .btn-wa{font-size:1.12rem;padding:1.05rem 2.3rem}
+  .cta-tel{display:block;margin-top:1.3rem;font-size:.95rem;opacity:.85}
+
+  /* ============ FOOTER ============ */
+  footer{background:var(--berry-deep);color:rgba(255,255,255,.85);padding:2.2rem 0;font-size:.86rem}
+  .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+  .footer-inner .logo{color:#fff;font-size:1.05rem}
+  .footer-inner .logo span{color:var(--rose-soft)}
+
+  /* ============ STICKY MOBILE CTA ============ */
+  .sticky-wa{
+    position:fixed;bottom:0;left:0;right:0;z-index:60;
+    display:none;padding:.8rem 1rem calc(.8rem + env(safe-area-inset-bottom));
+    background:rgba(36,16,25,.93);backdrop-filter:blur(8px);
+  }
+  .sticky-wa .btn-wa{width:100%;justify-content:center;font-size:1rem}
+
+  /* ============ REVEAL ============ */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;transition:none}
+    .card:hover,.btn-wa:hover,.btn-card:hover{transform:none}
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width:960px){
+    .cards{grid-template-columns:repeat(2,1fr)}
+    .why-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:760px){
+    .nav-link{display:none}
+    .hero-inner{grid-template-columns:1fr;padding:2.6rem 0 3.2rem;text-align:center}
+    .hero p.lead{margin-inline:auto}
+    .hero-actions{justify-content:center}
+    .chips{justify-content:center}
+    .hero-figure{max-width:330px;margin-top:1.2rem}
+    .hero-badge{left:.6rem;bottom:.8rem}
+    .trust-inner{grid-template-columns:1fr 1fr;gap:1.15rem}
+    .sticky-wa{display:block}
+    body{padding-bottom:4.4rem}
+  }
+  @media (max-width:520px){
+    .cards{grid-template-columns:1fr}
+    .why-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#">DOLCE <span>CAPRIXO</span></a>
+    <div class="nav-cta">
+      <a class="nav-link" href="#menu">Menú</a>
+      <a class="btn-wa js-order" href="#" data-product="Consulta general">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H8l-4 3v-3H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 9h8M8 12.5h5" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>
+        Pedir ahora
+      </a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container hero-inner">
+    <div>
+      <span class="kicker">🍰 Postres artesanales · Chiclayo</span>
+      <h1>El antojo de hoy se resuelve con <em>un solo WhatsApp</em></h1>
+      <p class="lead">
+        Cheesecakes y crema volteada <strong>hechos el mismo día</strong>, con ingredientes frescos
+        y todo el cariño de la casa. Pide directo por WhatsApp, <strong>entregamos solo en Chiclayo</strong>
+        y pagas con Yape o Plin al recibir tu pedido.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-wa btn-big js-order" href="#" data-product="Pedido">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H8l-4 3v-3H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 9h8M8 12.5h5" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>
+          Pedir por WhatsApp
+        </a>
+        <a class="btn-ghost" href="#menu">Ver postres</a>
+      </div>
+      <div class="chips">
+        <span class="chip">✨ Hecho el mismo día</span>
+        <span class="chip">🚚 Entrega solo en Chiclayo</span>
+        <span class="chip">💳 Yape · Plin contra entrega</span>
+      </div>
+    </div>
+    <figure class="hero-figure">
+      <img src="./public/image_portada.jpg" alt="Postres artesanales de Dolce Caprixo" width="440" height="550">
+    </figure>
+  </div>
+</header>
+
+<section class="trust" aria-label="Beneficios">
+  <div class="container trust-inner">
+    <div class="trust-item">
+      <span class="ico">🎂</span>
+      <div><b>Recién hechos</b><small>Elaborados el mismo día</small></div>
+    </div>
+    <div class="trust-item">
+      <span class="ico">🍓</span>
+      <div><b>Ingredientes frescos</b><small>Calidad</small></div>
+    </div>
+    <div class="trust-item">
+      <span class="ico">🚚</span>
+      <div><b>Entrega en Chiclayo</b><small>Puntuales</small></div>
+    </div>
+    <div class="trust-item">
+      <span class="ico">📱</span>
+      <div><b>Yape y Plin</b><small>Pagas contra entrega</small></div>
+    </div>
+  </div>
+</section>
+
+<main id="menu" class="menu">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Nuestros productos</span>
+      <h2>Elige tu antojo, nosotros lo llevamos</h2>
+      <p>Tres tamaños para cada sabor: personal para ti, mediano para compartir y familiar para toda la casa. Precios claros, sin sorpresas.</p>
+    </div>
+
+    <!-- CREMA VOLTEADA -->
+    <section class="group reveal">
+      <div class="group-head">
+        <h3>Crema Volteada</h3>
+        <span class="tagline">El clásico de la casa, suave y doradito</span>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="imgwell"><span class="ribbon">⭐ El más pedido</span><img src="./public/crema_volteada_150gr_price_8soles.png" alt="Crema volteada personal de 150 g" loading="lazy"></div>
+          <div class="card-body">
+            <div class="size-line"><small>Personal</small><span class="price">S/ 8</span></div>
+            <h3>150 g</h3>
+            <p class="desc">El consuelo dulce de siempre, al rescate de tu día (cuchareable).</p>
+            <a class="btn-card js-order" href="#" data-product="Crema Volteada 150 g" data-price="S/ 8">Pedir por WhatsApp</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="imgwell"><img src="./public/crema_volteada_450gr_price_40soles.png" alt="Crema volteada mediana de 450 g" loading="lazy"></div>
+          <div class="card-body">
+            <div class="size-line"><small>Para compartir</small><span class="price">S/ 40</span></div>
+            <h3>450 g</h3>
+            <p class="desc">El postre que abraza: suave por dentro, dorado por fuera.</p>
+            <a class="btn-card js-order" href="#" data-product="Crema Volteada 450 g" data-price="S/ 40">Pedir por WhatsApp</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="imgwell"><span class="ribbon gold">💛 Mejor precio</span><img src="./public/crema_volteada_1kg_price_80soles.png" alt="Crema volteada familiar de 1 kg" loading="lazy"></div>
+          <div class="card-body">
+            <div class="size-line"><small>Familiar</small><span class="price">S/ 80</span></div>
+            <h3>1 kg</h3>
+            <p class="desc">Para el almuerzo familiar de los domingos. ¡Se acaba rapidito!</p>
+            <a class="btn-card js-order" href="#" data-product="Crema Volteada 1 kg" data-price="S/ 80">Pedir por WhatsApp</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CHEESECAKE DE FRESA -->
+    <section class="group reveal">
+      <div class="group-head">
+        <h3>Cheesecake de Fresa</h3>
+        <span class="tagline">Cremoso, con la frescura que enamora</span>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="imgwell"><span class="ribbon">⭐ El más pedido</span><img src="./public/chesscake_fresa_150gr_price_9soles.png" alt="Cheesecake de fresa mediano de 450 g" loading="lazy"></div>
+          <div class="card-body">
+            <div class="size-line"><small>Personal</small><span class="price">S/ 9</span></div>
+            <h3>150 g</h3>
+            <p class="desc">Tu recompensa de hoy. Perfecto para el antojo del día (cuchareable).</p>
+            <a class="btn-card js-order" href="#" data-product="Cheesecake de Fresa 150 g" data-price="S/ 9">Pedir por WhatsApp</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="imgwell"><img src="./public/chesscake_fresa_450gr_price_50soles.png" alt="Cheesecake de fresa personal de 150 g" loading="lazy"></div>
+          <div class="card-body">
+            <div class="size-line"><small>Para compartir</small><span class="price">S/ 50</span></div>
+            <h3>450 g</h3>
+            <p class="desc">Ideal para la sobremesa familiar o esa visita que quieres impresionar.</p>
+            <a class="btn-card js-order" href="#" data-product="Cheesecake de Fresa 450 g" data-price="S/ 50">Pedir por WhatsApp</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="imgwell"><span class="ribbon gold">💛 Mejor precio</span><img src="./public/chesscake_fresa_1kg_price_90soles.png" alt="Cheesecake de fresa familiar de 1 kg" loading="lazy"></div>
+          <div class="card-body">
+            <div class="size-line"><small>Familiar</small><span class="price">S/ 90</span></div>
+            <h3>1 kg</h3>
+            <p class="desc">Para celebrar en grande. Sale más barato por porción: todos feliz.</p>
+            <a class="btn-card js-order" href="#" data-product="Cheesecake de Fresa 1 kg" data-price="S/ 90">Pedir por WhatsApp</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CHEESECAKE DE MARACUYÁ -->
+    <section class="group reveal">
+      <div class="group-head">
+        <h3>Cheesecake de Maracuyá</h3>
+        <span class="tagline">Tropical, con el ácido justo que engancha</span>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="imgwell"><span class="ribbon">⭐ El más pedido</span><img src="./public/chesscake_maracuya_150gr_price_9soles.png" alt="Cheesecake de maracuyá personal de 150 g" loading="lazy"></div>
+          <div class="card-body">
+            <div class="size-line"><small>Personal</small><span class="price">S/ 9</span></div>
+            <h3>150 g</h3>
+            <p class="desc">El toque tropical de tu día. Fresco, ligero y adictivo (Cuchareable).</p>
+            <a class="btn-card js-order" href="#" data-product="Cheesecake de Maracuyá 150 g" data-price="S/ 9">Pedir por WhatsApp</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="imgwell"><img src="./public/chesscake_maracuya_450gr_price_50soles.png" alt="Cheesecake de maracuyá mediano de 450 g" loading="lazy"></div>
+          <div class="card-body">
+            <div class="size-line"><small>Para compartir</small><span class="price">S/ 50</span></div>
+            <h3>450 g</h3>
+            <p class="desc">El favorito de las reuniones. Nadie dice que no al maracuyá.</p>
+            <a class="btn-card js-order" href="#" data-product="Cheesecake de Maracuyá 450 g" data-price="S/ 50">Pedir por WhatsApp</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="imgwell"><span class="ribbon gold">💛 Mejor precio</span><img src="./public/chesscake_maracuya_1kg_price_90soles.png" alt="Cheesecake de maracuyá familiar de 1 kg" loading="lazy"></div>
+          <div class="card-body">
+            <div class="size-line"><small>Familiar</small><span class="price">S/ 90</span></div>
+            <h3>1 kg</h3>
+            <p class="desc">Para los fans de verdad. Rinde más y cuesta menos por porción.</p>
+            <a class="btn-card js-order" href="#" data-product="Cheesecake de Maracuyá 1 kg" data-price="S/ 90">Pedir por WhatsApp</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+</main>
+
+<section class="why" aria-label="Por qué elegirnos">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">¿Por qué Dolce Caprixo?</span>
+      <h2>Pedir postre nunca fue tan fácil</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <span class="ico">👩‍🍳</span>
+        <h3>Hechos con receta propia</h3>
+        <p>Cada postre se prepara el mismo día de tu pedido, con la receta artesanal que nos hace únicos en Chiclayo.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="ico">⚡</span>
+        <h3>Pedido en 1 minuto</h3>
+        <p>Escríbenos por WhatsApp, elige tu postre y listo. Sin apps, sin registros, sin vueltas. Atendemos rápido.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="ico">🤝</span>
+        <h3>Pagas cuando lo recibes</h3>
+        <p>Entregamos solo en Chiclayo y pagas contra entrega con Yape, Plin o efectivo. Así de simple y de confiable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="container">
+    <h2>¿Ya se te antojó? Tu postre está a un mensaje de distancia 🍰</h2>
+    <p>Escríbenos ahora mismo y coordina tu entrega en Chiclayo. Stock del día limitado: los que piden temprano, postre seguro tienen.</p>
+    <a class="btn-wa btn-big js-order" href="#" data-product="Pedido">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H8l-4 3v-3H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 9h8M8 12.5h5" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>
+      Pedir por WhatsApp
+    </a>
+    <span class="cta-tel">o llámanos al +51 958 342 309</span>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <span class="logo">DOLCE <span>CAPRIXO</span></span>
+    <span>Postres artesanales · Chiclayo, Perú</span>
+    <span>Hecho con ❤ y mucho azúcar</span>
+  </div>
+</footer>
+
+<div class="sticky-wa">
+  <a class="btn-wa js-order" href="#" data-product="Pedido">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H8l-4 3v-3H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 9h8M8 12.5h5" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>
+    Pedir por WhatsApp
+  </a>
+</div>
+
+<script>
+  (function () {
+    "use strict";
+    var PHONE = "51958342309";
+
+    document.querySelectorAll(".js-order").forEach(function (el) {
+      var product = el.getAttribute("data-product") || "Pedido";
+      var price = el.getAttribute("data-price");
+      var msg = price
+        ? "\u00A1Hola Dolce Caprixo! \uD83C\uDF70 Quiero pedir: " + product + " (" + price + "). \u00BFEst\u00E1 disponible?"
+        : "\u00A1Hola Dolce Caprixo! \uD83C\uDF70 Quiero hacer un pedido.";
+      el.href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(msg);
+      el.target = "_blank";
+      el.rel = "noopener";
+    });
+
+    if (!window.IntersectionObserver) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
+  })();
+</script>
+</body>
+</html>
+
+
+
+
+
+

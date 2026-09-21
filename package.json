@@ -1,0 +1,11 @@
+{
+  "name": "dolce-caprixo",
+  "private": true,
+  "scripts": {
+    "start": "bun run server.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.2",
+    "@types/node": "^26.6.1"
+  }
+}

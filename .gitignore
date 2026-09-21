@@ -1,0 +1,10 @@
+# deps
+node_modules/
+
+# Archivos de compilación y producción (Vite / React)
+dist/
+dist-ssr/
+build/
+
+# Configuración del editor (WebStorm)
+.idea/
